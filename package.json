@@ -1,0 +1,25 @@
+{
+  "name": "CAPS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "HUB.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Code-Fellows-401/CAPS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Code-Fellows-401/CAPS/issues"
+  },
+  "homepage": "https://github.com/Code-Fellows-401/CAPS#readme",
+  "dependencies": {
+    "faker": "^5.5.3",
+    "jest": "^27.3.1",
+    "supertest": "^6.1.6"
+  }
+}

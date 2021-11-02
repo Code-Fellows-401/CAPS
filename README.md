@@ -5,6 +5,9 @@ Today, we begin the first of a 4-Phase build of the CAPS system, written in Node
 
 The following user/developer stories detail the major functionality for this phase of the project.
 
+![uml](./module/images/uml.png)
+
+Testing ->
 As a vendor, I want to alert the system when I have a package to be picked up./
 As a driver, I want to be notified when there is a package to be delivered./
 As a driver, I want to alert the system when I have picked up a package and it is in transit./

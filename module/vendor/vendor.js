@@ -10,9 +10,9 @@ let client = faker.name.findName();
 let Id = faker.finance.routingNumber();
 let location = faker.address.streetAddress();
 
-vendor.on('delivered', (payload) =>
-	console.log(`Thank you ${payload.orderId}`)
-);
+let handlePickUp = (payload) => console.log(`Thank you ${payload.client}`);
+
+vendor.on('delivered', handlePickUp);
 
 vendor.emit('pick-up', {
 	store: companyName,
@@ -20,3 +20,5 @@ vendor.emit('pick-up', {
 	customer: client,
 	address: location,
 });
+
+module.exports = handlePickUp;

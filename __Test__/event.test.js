@@ -17,6 +17,6 @@ describe('As a vendor, I want to alert the system when I have a package to be pi
 	});
 	it('Should send an object to the HUB', () => {
 		handleDelivery({ orderId: 123456 });
-		expect(console.log.mock.calls.length).toEqual(5);
+		expect(console.log.mock.calls.length).toEqual(2);
 	});
 });

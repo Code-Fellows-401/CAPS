@@ -1,23 +1,26 @@
 'use strict';
 
-const vendor = require('../../eventPool');
-require('../driver/driver.js');
-require('../HUB');
 const faker = require('faker');
 
-let companyName = faker.company.companyName();
-let client = faker.name.findName();
+const client = require('socket.io-client');
+const caps = client.connect('http://localhost:3030/caps');
+
+// let companyName = faker.company.companyName();
+let companyName = '1-206-flowers';
+let customerName = faker.name.findName();
 let Id = faker.finance.routingNumber();
 let location = faker.address.streetAddress();
 
-let handlePickUp = (payload) => console.log(`Thank you ${payload.client}`);
+let handlePickUp = (payload) => console.log(`Thank you ${payload.customer}`);
 
-vendor.on('delivered', handlePickUp);
+caps.emit('join', companyName);
 
-vendor.emit('pick-up', {
+caps.on('delivered', handlePickUp);
+
+caps.emit('pick-up', {
 	store: companyName,
 	orderId: Id,
-	customer: client,
+	customer: customerName,
 	address: location,
 });
 
